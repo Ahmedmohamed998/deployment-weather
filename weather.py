@@ -4,11 +4,11 @@ import numpy as np
 import pickle
 st.set_page_config(layout='wide')
 
-logistic= pickle.load(open('notebook/logistic.pkl', 'rb'))
-stacking = pickle.load(open('notebook/stacking.pkl', 'rb'))
-XG = pickle.load(open('notebook/XG.pkl', 'rb'))
-scaler = pickle.load(open('notebook/scaler.pkl', 'rb'))
-pt = pickle.load(open('notebook/pt.pkl', 'rb'))
+logistic= pickle.load(open('logistic.pkl', 'rb'))
+stacking = pickle.load(open('stacking.pkl', 'rb'))
+XG = pickle.load(open('XG.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
+pt = pickle.load(open('pt.pkl', 'rb'))
 
 input_names = [
     'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine',
@@ -61,8 +61,8 @@ for col in input_names:
     if col in cat_features:
         le = pickle.load(open(f'notebook/{col}_le.pkl', 'rb'))
         transformed_value = le.transform(np.array([[value]]))
-        features_list.append(transformed_value.item())#transformed_value.item() hetl3lak rakm 3la 4akl scaler y3ni integar best use in 2d-array
-        #transformed_value[0] de 3al4n tatl3lak scaler tkon fe 1d-array lken lw 2d-array hetl3lak array m4 scaler y3ni hetl3 array m4 rakm 
+        features_list.append(transformed_value.item())
+
     else:
          features_list.append(value)
         
