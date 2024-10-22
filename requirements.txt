@@ -2,4 +2,4 @@ pandas
 numpy
 streamlit
 xgboost
-scikit learn
+scikit-learn
