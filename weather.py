@@ -59,7 +59,7 @@ for col in input_names:
     value = user_features[col]
 
     if col in cat_features:
-        le = pickle.load(open(f'notebook/{col}_le.pkl', 'rb'))
+        le = pickle.load(open(f'{col}_le.pkl', 'rb'))
         transformed_value = le.transform(np.array([[value]]))
         features_list.append(transformed_value.item())
 
